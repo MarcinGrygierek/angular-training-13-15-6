@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   userName: string = 'Marian';
+  numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
   handleClick = () => {
     this.userName = 'Anna';
