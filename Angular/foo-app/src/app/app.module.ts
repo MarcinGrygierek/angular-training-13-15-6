@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HelloComponent} from './hello/hello.component';
@@ -12,6 +12,9 @@ import { FaqPageComponent } from './faq-page/faq-page.component';
 import { ContainerComponent } from './container/container.component';
 import { ContentConditionalComponent } from './content-conditional/content-conditional.component';
 import { ObservableTestComponent } from './observable-test/observable-test.component';
+import { GoodObservableComponent } from './good-observable/good-observable.component';
+import { RxjsTestComponent } from './rxjs-test/rxjs-test.component';
+import { HigherOrderOperatorsComponent } from './higher-order-operators/higher-order-operators.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,15 @@ import { ObservableTestComponent } from './observable-test/observable-test.compo
     FaqPageComponent,
     ContainerComponent,
     ContentConditionalComponent,
-    ObservableTestComponent
+    ObservableTestComponent,
+    GoodObservableComponent,
+    RxjsTestComponent,
+    HigherOrderOperatorsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
