@@ -1,0 +1,8 @@
+<ul>
+    <app-single-task 
+        *ngFor="let task of tasks" 
+        [task]="task"
+        (onDelete)="handleDeleteTask($event)"
+        >
+    </app-single-task>
+</ul>

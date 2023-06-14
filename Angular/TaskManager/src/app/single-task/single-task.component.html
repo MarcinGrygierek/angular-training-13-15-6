@@ -1,0 +1,9 @@
+<li>
+    <p>[{{ task.id }}] {{ task.name }} ({{ task.status }})</p>
+    <div>
+        <button (click)="handleDeleteTask(task.id)">Usuń</button>
+        <button [disabled]="task.isNew" (click)="task.setNew()">Nowy</button>
+        <button [disabled]="task.isInProgress" (click)="task.setInProgress()">W trakcie</button>
+        <button [disabled]="task.isDone" (click)="task.setDone()">Zakończony</button>
+    </div>
+</li>
