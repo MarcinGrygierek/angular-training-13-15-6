@@ -15,6 +15,9 @@ import { ObservableTestComponent } from './observable-test/observable-test.compo
 import { GoodObservableComponent } from './good-observable/good-observable.component';
 import { RxjsTestComponent } from './rxjs-test/rxjs-test.component';
 import { HigherOrderOperatorsComponent } from './higher-order-operators/higher-order-operators.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +33,16 @@ import { HigherOrderOperatorsComponent } from './higher-order-operators/higher-o
     ObservableTestComponent,
     GoodObservableComponent,
     RxjsTestComponent,
-    HigherOrderOperatorsComponent
+    HigherOrderOperatorsComponent,
+    TemplateFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

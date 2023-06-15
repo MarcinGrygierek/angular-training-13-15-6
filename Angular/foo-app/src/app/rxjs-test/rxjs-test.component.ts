@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { from, of, forkJoin, merge, take, concat, combineLatest, timer, startWith, debounceTime, distinctUntilChanged, map, filter, interval, tap } from 'rxjs';
+import { from, of, fromEvent, forkJoin, merge, take, concat, combineLatest, timer, startWith, debounceTime, distinctUntilChanged, map, filter, interval, tap } from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -56,17 +56,19 @@ export class RxjsTestComponent implements OnInit {
 
     // forkJoin([obs1, obs2, obs3]).subscribe(val => console.log(val));
 
-    const timer1 = timer(500, 1000);
-    const timer2 = timer(1000, 2000);
-    const timer3 = timer(0, 3000);
+    // const timer1 = timer(500, 1000);
+    // const timer2 = timer(1000, 2000);
+    // const timer3 = timer(0, 3000);
 
     // combineLatest([timer1, timer2, timer3]).subscribe(val => console.log(val));
   
-    // const timer1 = this.http.get('https://api.ipify.org?format=json');
-    // const timer2 = this.http.get('https://api.ipify.org?format=json');
-    // const timer3 = this.http.get('https://api.ipify.org?format=json');
+    const timer1 = this.http.get('https://api.ipify.org?format=json');
+    const timer2 = this.http.get('https://api.ipify.org?format=json');
+    const timer3 = this.http.get('https://api.ipify.org?format=json');
 
-    merge(timer1, timer2, timer3).subscribe(val => console.log(val));
+    forkJoin([timer1, timer2, timer3]).subscribe(val => console.log(val));
+  
+    const source = fromEvent(document.querySelector('p')!, 'click');
+
   }
-
 }

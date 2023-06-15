@@ -1,0 +1,16 @@
+<form #form="ngForm">
+    <input 
+        required 
+        minlength="3"
+        [(ngModel)]="searchValue" 
+        type="text" 
+        placeholder="search" 
+        id="search" 
+        name="search"
+        #inputName="ngModel"
+    >
+</form>
+<div>
+    <p *ngIf="inputName.touched && inputName.errors?.hasOwnProperty('required')">Pole jest wymagane</p>
+    <p *ngIf="inputName.errors?.hasOwnProperty('minlength')">Wymagane min. 3 znaki</p>
+</div>
