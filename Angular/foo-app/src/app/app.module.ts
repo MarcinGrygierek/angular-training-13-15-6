@@ -18,6 +18,7 @@ import { HigherOrderOperatorsComponent } from './higher-order-operators/higher-o
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { TodosComponent } from './todos/todos.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     RxjsTestComponent,
     HigherOrderOperatorsComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,
