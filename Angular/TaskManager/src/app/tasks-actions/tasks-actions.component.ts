@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TasksService } from '../tasks.service';
 
 @Component({
   selector: 'app-tasks-actions',
@@ -7,23 +8,16 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./tasks-actions.component.scss']
 })
 export class TasksActionsComponent {
-  @Output()
-  onNewTask = new EventEmitter<string>();
-
   form: FormGroup;
 
-  // form = new FormGroup({
-  //   name: new FormControl('', Validators.required)
-  // })
-
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private tasksService: TasksService) {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
     })
   }
 
   handleSubmit() {
-    this.onNewTask.emit(this.form.controls['name'].value);
+    this.tasksService.handleNewTask(this.form.controls['name'].value);
     this.form.reset();
   }
 }
