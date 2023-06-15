@@ -11,7 +11,7 @@ export class ManagerComponent  {
 
   handleNewTask(name: string) {
     const newTask = new Task(name);
-    this.tasks.push(newTask);
+    this.tasks = [...this.tasks, newTask];
   }
 
   handleDeleteTask(idToDelete: number) {

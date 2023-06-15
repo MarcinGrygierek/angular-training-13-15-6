@@ -1,5 +1,5 @@
 <li>
-    <p>[{{ task.id }}] {{ task.name }} ({{ task.status }})</p>
+    <p>[{{ task.id }}] {{ task.name }} ({{ status }})</p>
     <div>
         <button (click)="handleDeleteTask(task.id)">Usuń</button>
         <button [disabled]="task.isNew" (click)="task.setNew()">Nowy</button>
