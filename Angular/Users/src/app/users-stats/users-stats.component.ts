@@ -18,5 +18,4 @@ export class UsersStatsComponent implements OnInit {
       map(val => val.length)
     );
   }
-
 }
